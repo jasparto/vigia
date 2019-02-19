@@ -10,5 +10,7 @@
     </properties>
   <modules>
     <module>vigia-web</module>
+    <module>entity</module>
+    <module>controller</module>
   </modules>
 </project>
