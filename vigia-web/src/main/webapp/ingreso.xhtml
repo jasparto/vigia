@@ -4,7 +4,8 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Gestor</title>
+        <title>Vigia</title>
+        <link href="https://fonts.googleapis.com/css?family=Sonsie+One|Boogaloo" rel="stylesheet"/>
     </h:head>
     <h:body id="body" style="background-color:  #F9F9F9"> 
         <div class="body-header"/>
@@ -16,13 +17,13 @@
                 <h:form id="formulario"  >
                     <tr>
                         <td>
-                            <p:panel style="background:#8F0000; width: 50%; border-color: black; height:2px; 
-                                     margin-top: 5%; margin-left: 20%; font-size: 12px; text-align: center">
+                            <p:panel style="background:#0892D0; width: 50%; border-color: black; height:2px; 
+                                     margin-top: 3%; margin-left: 20%; font-size: 12px; text-align: center">
                             </p:panel>
 
-                            <p:panel style="width: 50%; background:#fff;border-color: black; margin-top: 1px; 
+                            <p:panel style="width: 50%; background:#fff;border-color: black; margin-top: 0px; 
                                      margin-left: 20%; font-size: 12px; text-align: center;"  >
-                                <h1 style="color: black">SISCOJ</h1>
+                                <h1 class="titulo">VIGIA</h1>
                                 <p:messages id="messages" showDetail="true" autoUpdate="true"/>
 
                                 <p:focus context="grid"/>
@@ -41,6 +42,7 @@
                                                 goodLabel="Segura" strongLabel="Segura" style="width: 200px; border-radius: 2px;"/>
 
                                     <p:commandButton value="Ingresar" style="margin: auto auto;width: 210px;height: 40px;" 
+                                                     styleClass="boton"
                                                      action="#{uiUsuario.validarUsuario()}"/>
 
                                     <p:spacer height="10"/>

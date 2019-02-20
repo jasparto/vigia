@@ -274,3 +274,20 @@ root {
     background: #f47920;
     /*background: #7fb80e;*/
 }
+
+.titulo{
+    font-family: 'Sonsie One', cursive;
+    font-size: 60px;
+    color: #0892D0;
+}
+
+.boton{
+    color: #fff;
+    background: #0892D0;
+}
+
+.boton:hover{
+    color: #0892D0;
+    background: #fff;
+    border-color: #8F0000;
+}

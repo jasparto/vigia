@@ -40,7 +40,7 @@ public class UsuarioDAO {
         try {
             consulta = new Consulta(this.conexion);
             String sql = "SELECT documento_usuario, nombre, apellido, usuario, clave, activo, correo"
-                    + " FROM usuarios"
+                    + " FROM usuario"
                     + " WHERE usuario='" + usuario.toUpperCase() + "'";
             rs = consulta.ejecutar(sql);
             if (rs.next()) {
@@ -77,7 +77,7 @@ public class UsuarioDAO {
         try {
             consulta = new Consulta(this.conexion);
             String sql = "SELECT codigo_establecimiento, documento_usuario, nombre, apellido, usuario, clave, activo, correo, fecha_ingreso, fecha_retiro"
-                    + " FROM usuarios";
+                    + " FROM usuario";
             rs = consulta.ejecutar(sql);
             while (rs.next()) {
                 Usuarios u = new Usuarios(rs.getString("documento_usuario"));
@@ -107,7 +107,7 @@ public class UsuarioDAO {
             consulta = new Consulta(this.conexion);
             StringBuilder sql = new StringBuilder(
                     "SELECT documento_usuario, nombre, apellido, usuario, clave, activo, correo"
-                    + " FROM usuarios"
+                    + " FROM usuario"
             );
 
             //  public static final String FILTRO_USUARIO = "USUARIO";
@@ -185,7 +185,7 @@ public class UsuarioDAO {
             StringBuilder sql = new StringBuilder(
                     "SELECT documento_usuario, nombre, apellido,"
                     + " usuario, clave, activo, correo, fecha_ingreso, fecha_retiro"
-                    + " FROM usuarios"
+                    + " FROM usuario"
                     + " WHERE nombre || apellido ||usuario LIKE '%" + query.toUpperCase() + "%'"
             );
             rs = consulta.ejecutar(sql);
@@ -368,7 +368,7 @@ public class UsuarioDAO {
             StringBuilder sql = new StringBuilder(
                     "SELECT RUE.codigo_establecimiento, U.documento_usuario, nombre, apellido,"
                     + " usuario, clave, activo, correo, fecha_ingreso, fecha_retiro"
-                    + " FROM usuarios U"
+                    + " FROM usuario U"
                     + " JOIN rel_usuarios_establecimiento RUE USING (documento_usuario)"
                     + " WHERE RUE.codigo_establecimiento=" + establecimiento.getCodigoEstablecimiento()
             );
@@ -401,7 +401,7 @@ public class UsuarioDAO {
             consulta = new Consulta(this.conexion);
             StringBuilder sql = new StringBuilder(
                     "SELECT count(1) > 0 as existe"
-                    + " FROM usuarios"
+                    + " FROM usuario"
                     + " WHERE documento_usuario='" + usuario.getUsuario() + "'"
             );
             rs = consulta.ejecutar(sql);
@@ -424,7 +424,7 @@ public class UsuarioDAO {
             consulta = new Consulta(this.conexion);
             StringBuilder sql = new StringBuilder(
                     "SELECT count(1) > 0 as existe"
-                    + " FROM usuarios"
+                    + " FROM usuario"
                     + " WHERE documento_usuario='" + usuario.getUsuariosPK().getDocumentoUsuario() + "'"
             );
             rs = consulta.ejecutar(sql);
